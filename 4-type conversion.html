@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The JavaScript typeof Operator</h2>
+
+<p>The typeof operator returns the type of a variable, object, function or expression.</p>
+
+<p id="demo"></p>
+
+<script>
+    document.getElementById("demo").innerHTML =
+        typeof "john" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof NaN + "<br>" +
+        typeof false + "<br>" +
+        typeof [1,2,3,4] + "<br>" +
+        typeof {name:'john', age:34} + "<br>" +
+        typeof new Date() + "<br>" +
+        typeof function () {} + "<br>" +
+        typeof myCar + "<br>" +
+        typeof null;
+
+    // Строковое преобразование
+    alert( String(null) === "null" ); // true
+
+    alert( true + "test" ); // "truetest"
+    alert( "123" + undefined ); // "123undefined"
+    ///Численное преобразование
+
+    // var a = +"123"; // 123
+    var a = Number("123"); // 123, тот же эффект
+    console.log(typeof (a));
+    // Специальные значения
+
+    // Значение	Преобразуется в...
+    // undefined	NaN
+    // null	0
+    alert( null >= 0 ); // true, т.к. null преобразуется к 0
+    alert( null > 0 ); // false (не больше), т.к. null преобразуется к 0
+    alert( null == 0 ); // false (и не равен!), т.к. == рассматривает null особо.
+
+
+    // Логическое преобразование if
+    // Значение	Преобразуется в...
+    // undefined	NaN
+    // null	0
+    // true / false	1 / 0
+    // Числа	Все true, кроме 0, NaN -- false.
+    //     Строки	Все true, кроме пустой строки "" -- false
+    // Объекты	Всегда true
+
+
+
+</script>
+
+
+
+</body>
+</html>
